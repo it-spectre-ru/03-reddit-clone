@@ -4,7 +4,7 @@ import React from 'react';
 const AuthButtons: React.FC = () => {
   return (
     <>
-      <Button>Log In</Button>
+      <Button variant="outline">Log In</Button>
       <Button>Sign Up</Button>
     </>
   );
