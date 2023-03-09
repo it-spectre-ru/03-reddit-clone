@@ -19,7 +19,8 @@ const SignUp: React.FC = () => {
     useCreateUserWithEmailAndPassword(auth);
 
   // firebase logic
-  const onSubmit = () => {
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     if (signUpForm.password !== signUpForm.confirmPassword) {
       setError('Password do not match');
       return;
