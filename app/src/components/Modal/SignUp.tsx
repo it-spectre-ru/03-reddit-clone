@@ -21,6 +21,7 @@ const SignUp: React.FC = () => {
   // firebase logic
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (error) setError('');
     if (signUpForm.password !== signUpForm.confirmPassword) {
       setError('Password do not match');
       return;
@@ -111,7 +112,7 @@ const SignUp: React.FC = () => {
         </Text>
       )}
 
-      <Button width="100%" height="36px" mt={2} mb={2} type="submit">
+      <Button width="100%" height="36px" mt={2} mb={2} type="submit" isLoading={loading}>
         Sign Up
       </Button>
       <Flex fontSize="9pt" justifyContent="center">
@@ -133,6 +134,3 @@ const SignUp: React.FC = () => {
   );
 };
 export default SignUp;
-function userCreateUserWithEmailAndPassword(auth: any): [any, any, any, any] {
-  throw new Error('Function not implemented.');
-}
