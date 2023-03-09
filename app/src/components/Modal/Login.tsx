@@ -82,7 +82,8 @@ const Login: React.FC<LoginProps> = () => {
               ...prev,
               view: 'signup',
             }))
-          }>
+          }
+        >
           SignUp
         </Text>
       </Flex>
