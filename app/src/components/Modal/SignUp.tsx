@@ -106,11 +106,12 @@ const SignUp: React.FC = () => {
         bg="gray.50"
       />
 
-      {error && (
-        <Text textAlign="center" color="red" fontSize="10pt">
-          {error}
-        </Text>
-      )}
+      {error ||
+        (userError && (
+          <Text textAlign="center" color="red" fontSize="10pt">
+            {error || userError.message}
+          </Text>
+        ))}
 
       <Button width="100%" height="36px" mt={2} mb={2} type="submit" isLoading={loading}>
         Sign Up
