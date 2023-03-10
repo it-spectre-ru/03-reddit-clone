@@ -12,7 +12,7 @@ const OAuthButtons: React.FC = () => {
         Continue width Google
       </Button>
       <Button variant="oauth">Some othe providers</Button>
-      {error && <Text>{error}</Text>}
+      {error && <Text>{error.message}</Text>}
     </Flex>
   );
 };
