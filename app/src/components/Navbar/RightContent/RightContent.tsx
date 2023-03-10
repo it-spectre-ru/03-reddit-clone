@@ -4,15 +4,15 @@ import AuthModal from '../../Modal/Auth/AuthModal';
 import AuthButtons from './AuthButtons';
 
 type RightContentProps = {
-  // user: any;
+  user: any;
 };
 
-const RightContent: React.FC<RightContentProps> = () => {
+const RightContent: React.FC<RightContentProps> = ({ user }) => {
   return (
     <>
       <AuthModal />
       <Flex justify="center" align="center">
-        <AuthButtons />
+        {user ? <div>there is user</div> : <AuthButtons />}
       </Flex>
     </>
   );
