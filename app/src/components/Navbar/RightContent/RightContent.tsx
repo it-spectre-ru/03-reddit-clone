@@ -14,7 +14,7 @@ const RightContent: React.FC<RightContentProps> = ({ user }) => {
     <>
       <AuthModal />
       <Flex justify="center" align="center">
-        {user ? <div>There is user</div> : <AuthButtons />}
+        {user ? <Button onClick={() => signOut(auth)}>Logout</Button> : <AuthButtons />}
       </Flex>
     </>
   );
