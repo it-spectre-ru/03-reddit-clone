@@ -10,12 +10,13 @@ import {
   Flex,
   MenuDivider,
 } from '@chakra-ui/react';
-import { User } from 'firebase/auth';
+import { signOut, User } from 'firebase/auth';
 import { FaRedditSquare } from 'react-icons/fa';
 import { VscAccount } from 'react-icons/vsc';
 import { IoSparkles } from 'react-icons/io5';
 import { CgProfile } from 'react-icons/cg';
 import { MdOutlineLogin } from 'react-icons/md';
+import { auth } from '@/src/firebase/clientApp';
 
 type UserMenuProps = { user?: User | null };
 
@@ -30,9 +31,9 @@ const UserMenu: React.FC<UserMenuProps> = ({ user }) => {
           outline: '1px solid',
           outlineColor: 'gray.200',
         }}>
-        {user ? (
+        <Flex align="center">
           <Flex align="center">
-            <Flex align="center">
+            {user ? (
               <>
                 <Icon
                   fontSize={24}
@@ -41,21 +42,18 @@ const UserMenu: React.FC<UserMenuProps> = ({ user }) => {
                   as={FaRedditSquare}
                 />
               </>
-              <ChevronDownIcon />
-            </Flex>
+            ) : (
+              <Icon fontSize={24} color="gray.400" mr={1} as={VscAccount} />
+            )}
           </Flex>
-        ) : (
-          <Icon fontSize={24} color="gray.400" mr={1} as={VscAccount} />
-        )}
+          <ChevronDownIcon />
+        </Flex>
       </MenuButton>
       <MenuList>
         <MenuItem
           fontSize="10pt"
           fontWeight={700}
-          _hover={{
-            bg: 'blue.500',
-            color: 'white',
-          }}>
+          _hover={{ bg: 'blue.500', color: 'white' }}>
           <Flex align="center">
             <Icon fontSize={20} mr={2} as={CgProfile} />
             Profile
@@ -68,7 +66,8 @@ const UserMenu: React.FC<UserMenuProps> = ({ user }) => {
           _hover={{
             bg: 'blue.500',
             color: 'white',
-          }}>
+          }}
+          onClick={() => signOut(auth)}>
           <Flex align="center">
             <Icon fontSize={20} mr={2} as={MdOutlineLogin} />
             Log Out
