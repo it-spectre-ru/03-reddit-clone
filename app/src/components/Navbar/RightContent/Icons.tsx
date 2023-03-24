@@ -48,7 +48,7 @@ const Icons: React.FC = () => {
           cursor="pointer"
           borderRadius={4}
           _hover={{ bg: 'gray.200' }}>
-          <Icon as={BsChatDots} fontSize={22} />
+          <Icon as={BsChatDots} fontSize={20} />
         </Flex>
         <Flex
           mr={1.5}
@@ -57,16 +57,17 @@ const Icons: React.FC = () => {
           cursor="pointer"
           borderRadius={4}
           _hover={{ bg: 'gray.200' }}>
-          <Icon as={IoNotificationsOutline} fontSize={22} />
+          <Icon as={IoNotificationsOutline} fontSize={20} />
         </Flex>
         <Flex
+          display={{ base: 'none', md: 'flex' }}
           mr={1.5}
           ml={1.5}
           padding={1}
           cursor="pointer"
           borderRadius={4}
           _hover={{ bg: 'gray.200' }}>
-          <Icon as={GrAdd} fontSize={22} />
+          <Icon as={GrAdd} fontSize={20} />
         </Flex>
       </>
     </Flex>
