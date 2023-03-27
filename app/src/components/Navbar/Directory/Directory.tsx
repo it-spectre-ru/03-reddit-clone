@@ -16,7 +16,10 @@ const UserMenu: React.FC = () => {
           outline: '1px solid',
           outlineColor: 'gray.200',
         }}>
-        <Flex align="center">
+        <Flex
+          align="center"
+          justify="space-between"
+          width={{ base: 'auto', lg: '200px' }}>
           <Flex align="center">
             <Icon fontSize={24} mr={{ base: 1, md: 2 }} as={TiHome} />
             <Flex display={{ base: 'none', lg: 'flex' }}>
