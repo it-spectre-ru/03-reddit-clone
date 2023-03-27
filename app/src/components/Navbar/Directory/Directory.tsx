@@ -31,7 +31,7 @@ const UserMenu: React.FC = () => {
           <ChevronDownIcon />
         </Flex>
       </MenuButton>
-      <MenuList></MenuList>
+      <MenuList>{/* <Communities /> */}Communities</MenuList>
     </Menu>
   );
 };
